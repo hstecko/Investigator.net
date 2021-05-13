@@ -1,0 +1,319 @@
+ <head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Investorgator - Invest like the Pros</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="css/etline-font.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/searchbarstyle.css">
+    <link href="https://pagecdn.io/lib/easyfonts/fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/fontawesomeconfig.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <meta charset="utf-8">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
+
+</head>
+  <section class="features section-padding" id="features" style="min-height: 700px;">
+        <div class="container"> 
+            <button id = "btnExportToCsv">Export to CSV</button>
+            <div class = "row">
+                <div class = "quarter-filter"> 
+                    Quarter:
+                    <select id = "selectField">
+                        <option year = "2021" quarter="1" selected>2021 Quarter 1</option>
+                        <option year = "2020" quarter="4">2020 Quarter 4</option>
+                        <option year = "2020" quarter="3">2020 Quarter 3</option>
+                        <option year = "2020" quarter="2">2020 Quarter 2</option>
+                        <option year = "2020" quarter="1">2020 Quarter 1</option>
+                        <option year = "2019" quarter="4">2019 Quarter 4</option>
+                        <option year = "2019" quarter="3">2019 Quarter 3</option>
+                        <option year = "2019" quarter="2">2019 Quarter 2</option>
+                        <option year = "2019" quarter="1">2019 Quarter 1</option>
+                        <option year = "2018" quarter="4">2018 Quarter 4</option>
+                        <option year = "2018" quarter="3">2018 Quarter 3</option>
+                        <option year = "2018" quarter="2">2018 Quarter 2</option>
+                        <option year = "2018" quarter="1">2018 Quarter 1</option>
+                        <option year = "2017" quarter="4">2017 Quarter 4</option>
+                        <option year = "2017" quarter="3">2017 Quarter 3</option>
+                        <option year = "2017" quarter="2">2017 Quarter 2</option>
+                        <option year = "2017" quarter="1">2017 Quarter 1</option>
+                        <option year = "2016" quarter="4">2016 Quarter 4</option>
+                        <option year = "2016" quarter="3">2016 Quarter 3</option>
+                        <option year = "2016" quarter="2">2016 Quarter 2</option>
+                        <option year = "2016" quarter="1">2016 Quarter 1</option>                     
+                    </select>
+                </div>
+                    <table id="dataTable">
+                        
+                        <tr>
+                            <th>Fund Name</th>
+                            <th>Shares</th>
+                            <th>Value</th>
+                            <th>% Of Shares Outstanding</th>
+                            <th>% Of Portfolio</th>
+                            <th>Q/Q Change in Position Size</th>
+                            <th>Y/Y Change in Position Size</th>
+                            <th>Acquisition Date</th>
+                        </tr>
+                        <tr>
+                            <td>RBS Partners</td>
+                            <td>240</td>
+                            <td>24,716</td>
+                            <td>0.13%</td>
+                            <td>12%</td>
+                            <td>3%</td>
+                            <td>1%</td>
+                            <td>03/22/21</td>
+                        </tr>
+                         <tr>
+                            <td>Joho Capital</td>
+                            <td>80</td>
+                            <td>7,840</td>
+                            <td>2%</td>
+                            <td>18%</td>
+                            <td>3%</td>
+                            <td>3%</td>
+                            <td>01/30/21</td>
+                        </tr>
+                        <tr>
+                            <td>QVT Financial</td>
+                            <td>99</td>
+                            <td>100,959</td>
+                            <td>1%</td>
+                            <td>30%</td>
+                            <td>-12%</td>
+                            <td>-10%</td>
+                            <td>12/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>Crosslink Capital</td>
+                            <td>510</td>
+                            <td>64,855</td>
+                            <td>2%</td>
+                            <td>15%</td>
+                            <td>-5%</td>
+                            <td>-5%</td>
+                            <td>03/10/21</td>
+                        </tr>
+                        <tr>
+                            <td>Whale Rock Capital Management</td>
+                            <td>105</td>
+                            <td>9,501</td>
+                            <td>0.5%</td>
+                            <td>11%</td>
+                            <td>35%</td>
+                            <td>33%</td>
+                            <td>02/12/20</td>
+                        </tr>
+                        <tr>
+                            <td>Dorsal Capital</td>
+                            <td>512</td>
+                            <td>32,400</td>
+                            <td>0.11%</td>
+                            <td>22%</td>
+                            <td>11%</td>
+                            <td>10%</td>
+                            <td>04/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>Sequoia Financial</td>
+                            <td>8,000</td>
+                            <td>43,544</td>
+                            <td>3%</td>
+                            <td>8%</td>
+                            <td>3%</td>
+                            <td>5%</td>
+                            <td>04/01/22</td>
+                        </tr>
+                        <tr>
+                            <td>Van Cleef Asset Management</td>
+                            <td>2,000</td>
+                            <td>24,716</td>
+                            <td>1%</td>
+                            <td>6%</td>
+                            <td>11%</td>
+                            <td>10%</td>
+                            <td>11/20/20</td>
+                        </tr>
+                                                <tr>
+                            <td>Soroban Capital</td>
+                            <td>240</td>
+                            <td>24,716</td>
+                            <td>0.13%</td>
+                            <td>12%</td>
+                            <td>3%</td>
+                            <td>1%</td>
+                            <td>03/22/21</td>
+                        </tr>
+                         <tr>
+                            <td>Joho Capital</td>
+                            <td>80</td>
+                            <td>7,840</td>
+                            <td>2%</td>
+                            <td>18%</td>
+                            <td>3%</td>
+                            <td>3%</td>
+                            <td>01/30/21</td>
+                        </tr>
+                        <tr>
+                            <td>QVT Financial</td>
+                            <td>99</td>
+                            <td>100,959</td>
+                            <td>1%</td>
+                            <td>30%</td>
+                            <td>-12%</td>
+                            <td>-10%</td>
+                            <td>12/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>Crosslink Capital</td>
+                            <td>510</td>
+                            <td>64,855</td>
+                            <td>2%</td>
+                            <td>15%</td>
+                            <td>-5%</td>
+                            <td>-5%</td>
+                            <td>03/10/21</td>
+                        </tr>
+                        <tr>
+                            <td>Whale Rock Capital Management</td>
+                            <td>105</td>
+                            <td>9,501</td>
+                            <td>0.5%</td>
+                            <td>11%</td>
+                            <td>35%</td>
+                            <td>33%</td>
+                            <td>02/12/20</td>
+                        </tr>
+                        <tr>
+                            <td>Dorsal Capital</td>
+                            <td>512</td>
+                            <td>32,400</td>
+                            <td>0.11%</td>
+                            <td>22%</td>
+                            <td>11%</td>
+                            <td>10%</td>
+                            <td>04/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>Sequoia Financial</td>
+                            <td>8,000</td>
+                            <td>43,544</td>
+                            <td>3%</td>
+                            <td>8%</td>
+                            <td>3%</td>
+                            <td>5%</td>
+                            <td>04/01/22</td>
+                        </tr>
+                        <tr>
+                            <td>Van Cleef Asset Management</td>
+                            <td>2,000</td>
+                            <td>24,716</td>
+                            <td>1%</td>
+                            <td>6%</td>
+                            <td>11%</td>
+                            <td>10%</td>
+                            <td>11/20/20</td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        <div class="device-showcase">
+            <div class="devices" style = "opacity:0.55;">
+                <div class="ipad-wrap wp1 left"></div>
+                <div class="iphone-wrap wp2" style="left:1200px;"></div>
+            </div>
+        </div>
+        <div class="responsive-feature-img"><img src="img/bullAndBear.png" alt="responsive devices"></div>
+    </section>
+    <section class="intro section-padding">
+        <div class="container" style="display:inline-block; width:49%; vertical-align:top !important;">
+            <div class="summaryTable">
+	            <div class="header">
+                      <h2>Insider Summary Statistics</h2>
+                      <p>12/31/2020</p>
+            	</div>
+	            <div class="contents">
+		        <table>
+		            <tr>
+            	    	<td class="metrics">Num. of Institutional Owners</td>
+            	    	<td class="metricVals">17</td>
+            	    	<td class="space">&nbsp;</td>
+		            	<td class="metrics">% of Shares Held by Institutions</td>
+                		<td class="metricVals">16.44</td>
+	            	</tr>
+	            	<tr>
+                		<td class="metrics">Num. of Buyers Over Past Year</td>
+                		<td class="metricVals">120</td>
+                		<td class="space">&nbsp;</td>
+                		<td class="metrics">Num. of Sellers Over Past Year</td>
+                		<td class="metricVals">81</td>
+	            	</tr>
+	            	<tr>
+                		<td class="metrics">Num. of Opened Positions</td>
+                		<td class="metricVals">20 </td>
+                		<td class="space">&nbsp;</td>
+                		<td class="metrics">Num. of Closed Positions</td>
+                		<td class="metricVals">31</td>
+	            	</tr>
+	            	<tr>
+                		<td class="metrics">Annual Change in the % of Institutional Ownership</td>
+                		<td class="metricVals">5.25</td>
+                		<td class="space">&nbsp;</td>
+                		<td class="metrics">Quarterly Change in the % of Institutional Ownership</td>
+                		<td class="metricVals">2.25</td>
+	            	</tr>
+	            	<tr>
+	                	<td class="metrics">Net Institutional Buys (Num. Buyers - Num. Sellers)</td>
+                		<td class="metricVals">4</td>
+                		<td class="space">&nbsp;</td>
+	                	<td class="metrics">Net Institutional Purchases (Purchased Shares - Sold Shares)</td>
+                		<td class="metricVals">16.41 million</td>
+	            	</tr>
+	            	<tr>
+	                	<td class="metrics">Controlling Owners</td>
+                		<td class="metricVals">N/A</td>
+                		<td class="space">&nbsp;</td>
+	                	<td class="metrics">Top 3 Institutional Shareholders</td>
+                		<td class="metricVals">Sequoia Financial, Van Cleef, Joho Capital</td>
+                	</tr>
+	        	</table>
+            </div>
+        </div>
+        <div id="columnchart_stacked" style="width:49%; height: 300px;" object-fit = "scale-down"></div>
+        </div>
+        <div class="container" style="display:inline-block; width:49%;">
+            <div class = "row" id="chart_div" style="width: 600px; height: 600px; float:right;" align = "center;" object-fit = "scale-down;"></div>
+        </div></div>
+    </section>
+   <section class="to-top">
+        <div class="container">
+            <div class="row">
+                <div class="to-top-wrap">
+                    <a href="#top" class="top"><i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  
+  </body>
+</html>

@@ -1,0 +1,13 @@
+// This file overrides the built-in Java runner
+// For more information see http://docs.aws.amazon.com/console/cloud9/change-runner
+{
+  "script": [
+    "export CLASSPATH=.:/home/ec2-user/mariadb-java-client-2.7.2.jar",
+    "echo $CLASSPATH",
+    "javac $file_name",
+    "java $file_base_name"
+  ],
+  "info": "Building $file_name and running $file_base_name",
+  "selector": "^.*\\.(java)$",
+  "trackId": "Java"
+}

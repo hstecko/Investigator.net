@@ -1,0 +1,539 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Investorgator - Invest like the Pros</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="css/etline-font.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/searchbarstyle.css">
+    <link href="https://pagecdn.io/lib/easyfonts/fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/fontawesomeconfig.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['treemap']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Asset Managers',    null,0,0],
+          ['Whale Rock Capital Management',   'Asset Managers',0,0],
+          ['QVT Financial',    'Asset Managers',0,0],
+          ['Joho Capital',      'Asset Managers',0,0],
+          ['Dorsal Capital Management', 'Asset Managers',0,0],
+          ['Oakmont',    'Asset Managers',0,0],
+          ['Soroban Capital', 'Asset Managers', 0, 0],
+          ['Crosslink Capital', 'Asset Managers', 0, 0],
+          ['Berkshire Hathaway', 'Asset Managers', 0, 0],
+          ['Duquesne Family Office', 'Asset Managers', 0, 0],
+          ['Rbs Partners', 'Asset Managers', 0, 0],
+          ['DDOG',    'Whale Rock Capital Management',11,10],
+          ['AMZN',       'Whale Rock Capital Management',52,31],
+          ['SQ',    'Whale Rock Capital Management',24,12],
+          ['MDB',    'Whale Rock Capital Management',16,-23],
+          ['SPY',    'QVT Financial', 42,-11],
+          ['ATEX',   'QVT Financial',31,-2],
+          ['SINA',    'QVT Financial',22,-13],
+          ['NYT',     'QVT Financial',17,4],
+          ['TSLA',        'QVT Financial',21, -5],
+          ['BABA',     'Joho Capital', 36,4],
+          ['MSFT',     'Joho Capital',20,-12],
+          ['GPN',     'Joho Capital',40,63],
+          ['EEFT',      'Joho Capital',4,34],
+          ['CGNX',  'Joho Capital',1,-5],
+          ['LTHM',    'Joho Capital',12,24],
+          ['FB',      'Joho Capital',18,13],
+          ['STZ',  'Joho Capital',11,-52],
+          ['SNAP',     'Dorsal Capital Management',21,0],
+          ['ROKU', 'Oakmont',             30,                              43],
+          ['AAPL',     'Oakmont',             12,                              2],
+          ['QCOM',     'Oakmont',             10,                              12],
+          ['LBRT',     'Oakmont',             8,                               10],
+          ['ATUS', 'Soroban Capital', 30, 50],
+          ['YUM', 'Soroban Capital', 23, -42],
+          ['ADI', 'Soroban Capital', 11, 35],
+          ['NTNX', 'Crosslink Capital', 40, -20],
+          ['PYPL', 'Crosslink Capital', 10, -15],
+          ['PTON', 'Crosslink Capital', 38, 0],
+          ['KO', 'Berkshire Hathaway', 3, 60],
+          ['GM', 'Berkshire Hathaway', 11, 42],
+          ['VZ', 'Berkshire Hathaway', 25, 39],
+          ['GOLD', 'Duquesne Family Office', 50, -40],
+          ['NUAN', 'Duquesne Family Office', 42, -29],
+          ['MELI', 'Duquesne Family Office', 12, 2],
+          ['AN', 'Rbs Partners', 50, 60],
+          ['LE', 'Rbs Partners', 60, 45],
+          ['SRG', 'Rbs Partners', 65, 35]
+        ]);
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+
+  var options = {
+    minColor: '#f00',
+    midColor: '#ddd',
+    maxColor: '#0d0',
+    showScale: true,
+    generateTooltip: showFullTooltip
+  };
+
+  tree.draw(data, options);
+
+  function showFullTooltip(row, size, value) {
+    return '<div style="background:#fd9; padding:10px; border-style:solid">' +
+           '<span style="font-family:Courier"><b>' + data.getValue(row, 0) +
+           '</b>, ' + data.getValue(row, 1) + ', ' + data.getValue(row, 2) +
+           ', ' + data.getValue(row, 3) + '</span><br>' +
+           'Datatable row: ' + row + '<br>' +
+	   data.getColumnLabel(2) +
+           ' (total value of this cell and its children): ' + size + '<br>' +
+	   data.getColumnLabel(3) + ': ' + value + ' </div>';
+  }
+
+      }
+      </script>
+    <script type="text/javascript">
+    google.charts.load('current', {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Investor Type', 'Institutional', 'Retail/Other', { role: 'annotation' } ],
+        ['2017', 20, 90, ''],
+        ['2018', 30, 80, ''],
+        ['2019', 25, 85, ''],
+        ['2020', 27, 83, ''],
+        ['2021', 22, 88, '']
+      ]);
+      var options = {
+        width: 600,
+        height: 400,
+        legend: { position: 'top', maxLines: 3 },
+        bar: {groupWidth: '75%'},
+        bars: 'vertical',
+        isStacked: 'percent',
+        backgroundColor: 'transparent',
+        chartArea: {left:'20%',top:'10%',width:'75%',height:'75%'},
+        legend: { position: 'bottom', alignment: 'end'  }
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_stacked'));
+      chart.draw(data, options);
+  }
+    </script>
+
+</head>
+<body id="top">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <section class="hero polyBg">
+        <section class="navigation">
+            <header>
+                <div class="header-content">
+                    <div class="logo"><a href="/index.html"><img src="img/logo.png" style="width:100px; margin-bottom:-25px; margin-top:-20px;"></a></div>
+                    <div class="header-nav">
+                        <nav>
+                            <ul class="primary-nav">
+                                <li><a href="/Companies.html">Companies</a></li>
+                                <li><a href="/InstitutionalInvestors.html">Institutional Investors</a></li>
+                                <li><a href="/Consensus.html">Consensus Picks</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="navicon">
+                        <a class="nav-toggle" href="#"><span></span></a>
+                    </div>
+                </div>
+            </header>
+        </section>
+        <div class="container" style="width:80%">
+            <div class="row" style="margin-right:10px">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="hero-content text-center">
+                        <div class="wrapper" style="position:absolute; width:100%; top:240px;">
+                          <div class="search-input">
+                            <a href="" target="_blank" hidden></a>
+                            <input type="text" placeholder="Type to search..">
+                            <div class="autocom-box">
+                            <!-- here list are inserted from javascript -->
+                            </div>
+                            <div class="icon"><i class="fa fad fa-cogs" aria-hidden="true" style="font-size: 35px;margin-top: 10px;color: rgba(28, 54, 83, 0.6);margin-right: 5px;"></i></div>
+                          </div>
+                        </div>
+                        <div class="wrapper" style="position:absolute;top: 305px;z-index: -1;">
+                            <ul class="tags">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features section-padding" id="features" style="min-height: 700px;">
+        <div class="container"> 
+            <button id = "btnExportToCsv">Export to CSV</button>
+            <div class = "row">
+                <div class = "quarter-filter"> 
+                    Quarter:
+                    <select id = "selectField">
+                        <option year = "2021" quarter="1" selected>2021 Quarter 1</option>
+                        <option year = "2020" quarter="4">2020 Quarter 4</option>
+                        <option year = "2020" quarter="3">2020 Quarter 3</option>
+                        <option year = "2020" quarter="2">2020 Quarter 2</option>
+                        <option year = "2020" quarter="1">2020 Quarter 1</option>
+                        <option year = "2019" quarter="4">2019 Quarter 4</option>
+                        <option year = "2019" quarter="3">2019 Quarter 3</option>
+                        <option year = "2019" quarter="2">2019 Quarter 2</option>
+                        <option year = "2019" quarter="1">2019 Quarter 1</option>
+                        <option year = "2018" quarter="4">2018 Quarter 4</option>
+                        <option year = "2018" quarter="3">2018 Quarter 3</option>
+                        <option year = "2018" quarter="2">2018 Quarter 2</option>
+                        <option year = "2018" quarter="1">2018 Quarter 1</option>
+                        <option year = "2017" quarter="4">2017 Quarter 4</option>
+                        <option year = "2017" quarter="3">2017 Quarter 3</option>
+                        <option year = "2017" quarter="2">2017 Quarter 2</option>
+                        <option year = "2017" quarter="1">2017 Quarter 1</option>
+                        <option year = "2016" quarter="4">2016 Quarter 4</option>
+                        <option year = "2016" quarter="3">2016 Quarter 3</option>
+                        <option year = "2016" quarter="2">2016 Quarter 2</option>
+                        <option year = "2016" quarter="1">2016 Quarter 1</option>                     
+                    </select>
+                </div>
+                    <table id="dataTable">
+                        
+                        <tr>
+                            <th>Fund Name</th>
+                            <th>Shares</th>
+                            <th>Value</th>
+                            <th>% Of Shares Outstanding</th>
+                            <th>% Of Portfolio</th>
+                            <th>Q/Q Change in Position Size</th>
+                            <th>Y/Y Change in Position Size</th>
+                            <th>Acquisition Date</th>
+                        </tr>
+                        <tr>
+                            <td>RBS Partners</td>
+                            <td>240</td>
+                            <td>24,716</td>
+                            <td>0.13%</td>
+                            <td>12%</td>
+                            <td>3%</td>
+                            <td>1%</td>
+                            <td>03/22/21</td>
+                        </tr>
+                         <tr>
+                            <td>Joho Capital</td>
+                            <td>80</td>
+                            <td>7,840</td>
+                            <td>2%</td>
+                            <td>18%</td>
+                            <td>3%</td>
+                            <td>3%</td>
+                            <td>01/30/21</td>
+                        </tr>
+                        <tr>
+                            <td>QVT Financial</td>
+                            <td>99</td>
+                            <td>100,959</td>
+                            <td>1%</td>
+                            <td>30%</td>
+                            <td>-12%</td>
+                            <td>-10%</td>
+                            <td>12/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>Crosslink Capital</td>
+                            <td>510</td>
+                            <td>64,855</td>
+                            <td>2%</td>
+                            <td>15%</td>
+                            <td>-5%</td>
+                            <td>-5%</td>
+                            <td>03/10/21</td>
+                        </tr>
+                        <tr>
+                            <td>Whale Rock Capital Management</td>
+                            <td>105</td>
+                            <td>9,501</td>
+                            <td>0.5%</td>
+                            <td>11%</td>
+                            <td>35%</td>
+                            <td>33%</td>
+                            <td>02/12/20</td>
+                        </tr>
+                        <tr>
+                            <td>Dorsal Capital</td>
+                            <td>512</td>
+                            <td>32,400</td>
+                            <td>0.11%</td>
+                            <td>22%</td>
+                            <td>11%</td>
+                            <td>10%</td>
+                            <td>04/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>Sequoia Financial</td>
+                            <td>8,000</td>
+                            <td>43,544</td>
+                            <td>3%</td>
+                            <td>8%</td>
+                            <td>3%</td>
+                            <td>5%</td>
+                            <td>04/01/22</td>
+                        </tr>
+                        <tr>
+                            <td>Van Cleef Asset Management</td>
+                            <td>2,000</td>
+                            <td>24,716</td>
+                            <td>1%</td>
+                            <td>6%</td>
+                            <td>11%</td>
+                            <td>10%</td>
+                            <td>11/20/20</td>
+                        </tr>
+                                                <tr>
+                            <td>Soroban Capital</td>
+                            <td>240</td>
+                            <td>24,716</td>
+                            <td>0.13%</td>
+                            <td>12%</td>
+                            <td>3%</td>
+                            <td>1%</td>
+                            <td>03/22/21</td>
+                        </tr>
+                         <tr>
+                            <td>Joho Capital</td>
+                            <td>80</td>
+                            <td>7,840</td>
+                            <td>2%</td>
+                            <td>18%</td>
+                            <td>3%</td>
+                            <td>3%</td>
+                            <td>01/30/21</td>
+                        </tr>
+                        <tr>
+                            <td>QVT Financial</td>
+                            <td>99</td>
+                            <td>100,959</td>
+                            <td>1%</td>
+                            <td>30%</td>
+                            <td>-12%</td>
+                            <td>-10%</td>
+                            <td>12/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>Crosslink Capital</td>
+                            <td>510</td>
+                            <td>64,855</td>
+                            <td>2%</td>
+                            <td>15%</td>
+                            <td>-5%</td>
+                            <td>-5%</td>
+                            <td>03/10/21</td>
+                        </tr>
+                        <tr>
+                            <td>Whale Rock Capital Management</td>
+                            <td>105</td>
+                            <td>9,501</td>
+                            <td>0.5%</td>
+                            <td>11%</td>
+                            <td>35%</td>
+                            <td>33%</td>
+                            <td>02/12/20</td>
+                        </tr>
+                        <tr>
+                            <td>Dorsal Capital</td>
+                            <td>512</td>
+                            <td>32,400</td>
+                            <td>0.11%</td>
+                            <td>22%</td>
+                            <td>11%</td>
+                            <td>10%</td>
+                            <td>04/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>Sequoia Financial</td>
+                            <td>8,000</td>
+                            <td>43,544</td>
+                            <td>3%</td>
+                            <td>8%</td>
+                            <td>3%</td>
+                            <td>5%</td>
+                            <td>04/01/22</td>
+                        </tr>
+                        <tr>
+                            <td>Van Cleef Asset Management</td>
+                            <td>2,000</td>
+                            <td>24,716</td>
+                            <td>1%</td>
+                            <td>6%</td>
+                            <td>11%</td>
+                            <td>10%</td>
+                            <td>11/20/20</td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        <div class="device-showcase">
+            <div class="devices" style = "opacity:0.55;">
+                <div class="ipad-wrap wp1 left"></div>
+                <div class="iphone-wrap wp2" style="left:1200px;"></div>
+            </div>
+        </div>
+        <div class="responsive-feature-img"><img src="img/bullAndBear.png" alt="responsive devices"></div>
+        <script src= "js/TableExportCSV.js"></script>
+        <script>
+        const dataTable = document.getElementById("dataTable");
+        const btnExportToCsv = document.getElementById("btnExportToCsv");
+
+        btnExportToCsv.addEventListener("click", () => {
+            const exporter = new TableCSVExporter(dataTable);
+            const csvOutput = exporter.convertToCSV();
+            const csvBlob = new Blob([csvOutput], { type: "text/csv" });
+            const blobUrl = URL.createObjectURL(csvBlob);
+            const anchorElement = document.createElement("a");
+
+            anchorElement.href = blobUrl;
+            anchorElement.download = "table-export.csv";
+            anchorElement.click();
+
+            setTimeout(() => {
+                URL.revokeObjectURL(blobUrl);
+            }, 500);
+        });
+    </script>
+    </section>
+    <section class="intro section-padding">
+        <div class="container" style="display:inline-block; width:49%; vertical-align:top !important;">
+            <div class="summaryTable">
+	            <div class="header">
+                      <h2>Insider Summary Statistics</h2>
+                      <p>12/31/2020</p>
+            	</div>
+	            <div class="contents">
+		        <table>
+		            <tr>
+            	    	<td class="metrics">Num. of Institutional Owners</td>
+            	    	<td class="metricVals">17</td>
+            	    	<td class="space">&nbsp;</td>
+		            	<td class="metrics">% of Shares Held by Institutions</td>
+                		<td class="metricVals">16.44</td>
+	            	</tr>
+	            	<tr>
+                		<td class="metrics">Num. of Buyers Over Past Year</td>
+                		<td class="metricVals">120</td>
+                		<td class="space">&nbsp;</td>
+                		<td class="metrics">Num. of Sellers Over Past Year</td>
+                		<td class="metricVals">81</td>
+	            	</tr>
+	            	<tr>
+                		<td class="metrics">Num. of Opened Positions</td>
+                		<td class="metricVals">20 </td>
+                		<td class="space">&nbsp;</td>
+                		<td class="metrics">Num. of Closed Positions</td>
+                		<td class="metricVals">31</td>
+	            	</tr>
+	            	<tr>
+                		<td class="metrics">Annual Change in the % of Institutional Ownership</td>
+                		<td class="metricVals">5.25</td>
+                		<td class="space">&nbsp;</td>
+                		<td class="metrics">Quarterly Change in the % of Institutional Ownership</td>
+                		<td class="metricVals">2.25</td>
+	            	</tr>
+	            	<tr>
+	                	<td class="metrics">Net Institutional Buys (Num. Buyers - Num. Sellers)</td>
+                		<td class="metricVals">4</td>
+                		<td class="space">&nbsp;</td>
+	                	<td class="metrics">Net Institutional Purchases (Purchased Shares - Sold Shares)</td>
+                		<td class="metricVals">16.41 million</td>
+	            	</tr>
+	            	<tr>
+	                	<td class="metrics">Controlling Owners</td>
+                		<td class="metricVals">N/A</td>
+                		<td class="space">&nbsp;</td>
+	                	<td class="metrics">Top 3 Institutional Shareholders</td>
+                		<td class="metricVals">Sequoia Financial, Van Cleef, Joho Capital</td>
+                	</tr>
+	        	</table>
+            </div>
+        </div>
+        <div id="columnchart_stacked" style="width:49%; height: 300px;" object-fit = "scale-down"></div>
+        </div>
+        <div class="container" style="display:inline-block; width:49%;">
+            <div class = "row" id="chart_div" style="width: 600px; height: 600px; float:right;" align = "center;" object-fit = "scale-down;"></div>
+        </div></div>
+    </section>
+   <section class="to-top">
+        <div class="container">
+            <div class="row">
+                <div class="to-top-wrap">
+                    <a href="#top" class="top"><i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="footer-links">
+                        <ul class="footer-group">
+                            <li><a href="Privacy.html">Privacy</a></li>
+                            <li><a href="Licenses.html">Licenses</a></li>
+                            <li><a href="#">Source Code</a></li>
+                            <li><a href="mailto:investorgator@case.edu">Contact</a></li>
+                        </ul>
+                        <p>Copyright © 2021 <a href="#">Investorgator</a><br>
+                    </div>
+                </div>
+                <div class="social-share">
+                    <p>Share Investorgator with your friends</p>
+                    <a href="https://twitter.com/Investorgator1" class="twitter-share"><i class="fa fa-twitter"></i></a> <a href="https://www.facebook.com/Investorgator-100130655501228" class="facebook-share"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript"> var jq3$ = $.noConflict(true);</script>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script> $( function() { $( "#selectField" ).selectmenu().selectmenu( "menuWidget" ).addClass( "overflow" );} );</script>
+    <script src="js/refreshCompanyPage.js"></script>
+    <script src="js/companySearchInfo.js"></script>
+    <script src="js/searchbarscript2.js"></script>
+    <script src="bower_components/retina.js/dist/retina.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="bower_components/classie/classie.js"></script>
+    <script src="bower_components/jquery-waypoints/lib/jquery.waypoints.min.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+</body>
+</html>

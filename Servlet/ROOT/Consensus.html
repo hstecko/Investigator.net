@@ -1,0 +1,426 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Investorgator - Invest like the Pros</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="css/etline-font.css">
+    <link rel = "stylesheet" href = "css/tablesort.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://pagecdn.io/lib/easyfonts/fonts.css" rel="stylesheet" />
+    <link href="css/dropdownStyle.css" rel="stylesheet" />
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/fontawesomeconfig.js"></script>
+</head>
+<body id="top">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <section class="hero polyBg">
+        <section class="navigation">
+            <header>
+                <div class="header-content">
+                    <div class="logo"><a href="/index.html"><img src="img/logo.png" style="width:100px; margin-bottom:-25px; margin-top:-20px;"></a></div>
+                    <div class="header-nav">
+                        <nav>
+                            <ul class="primary-nav">
+                                <li><a href="/Companies.html">Companies</a></li>
+                                <li><a href="/InstitutionalInvestors.html">Institutional Investors</a></li>
+                                <li><a href="/Consensus.html">Consensus Picks</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="navicon">
+                        <a class="nav-toggle" href="#"><span></span></a>
+                    </div>
+                </div>
+            </header>
+        </section>
+        <div class="container" style="width:80%">
+            <div class="row" style="margin-right:10px">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="hero-content text-center">
+                        <div class="wrapper" style="position:absolute; width:100%; top:240px;">
+                            <div class="select-menu">
+                             <select>
+                               <option selected="">Top Institutional Holdings</option>
+                                <option>Top Retail Holdings</option>
+                                <option>Most Popular This Quarter</option>
+                                <option>Least Popular This Quarter</option>
+                                <option>Most Popular This Year</option>
+                                <option>Least Popular This Year</option>
+                            </select>
+                            <!--put default here-->
+                            <div class="button"> Top Institutional Holdings <i class="fa fa-angle-down"></i></div>
+                            <ul class="leaderboards"></ul>
+                        </div>
+                        <p>
+                        Top Institutional Holdings Description Goes Here                            
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features section-padding" id="features" style="min-height: 700px;">
+        <div class="container"> 
+            <button id = "btnExportToCsv">Export to CSV</button>
+            <div class = "row">
+                <div class = "quarter-filter"> <!--https://www.youtube.com/watch?v=bMI_sQAF5bI-->
+                    Quarter:
+                    <select id = "selectField">
+                        <option value = "2020 Quarter 1" selected>2020 Quarter 1</option>
+                        <option value = "2020 Quarter 2">2020 Quarter 2</option>
+                        <option value = "2020 Quarter 3">2020 Quarter 3</option>
+                        <option value = "2020 Quarter 4">2020 Quarter 4</option>
+                    </select>
+                </div>
+                    <table id="dataTable">
+                        
+                        <tr>
+                            <th>Rank</th>
+                            <th>Company Name</th>
+                            <th>Ticker</th>
+                            <th>Shares</th>
+                            <th>Value</th>
+                            <th>% Of Shares Outstanding</th>
+                            <th>Q/Q Change in Position Size</th>
+                            <th>Y/Y Change in Position Size</th>
+                            <th>Acquisition Date</th>
+                        </tr>
+                        <tr>
+                            <td>1</th>
+                            <td>Apple</td>
+                            <td>AAPL</td>
+                            <td>2.0</td>
+                            <td>247.16</td>
+                            <td>13%</td>
+                            <td>500/20</td>
+                            <td>250/10</td>
+                            <td>03/22/21</td>
+                        </tr>
+                         <tr>
+                            <td>2</td>
+                            <td>Tesla</td>
+                            <td>TSLA</td>
+                            <td>3.0</td>
+                            <td>2078.40</td>
+                            <td>20%</td>
+                            <td>600/30</td>
+                            <td>300/15</td>
+                            <td>01/30/21</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Amazon</td>
+                            <td>AMZN</td>
+                            <td>1.0</td>
+                            <td>3119.59</td>
+                            <td>10%</td>
+                            <td>900/60</td>
+                            <td>45000/7</td>
+                            <td>12/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Proctor & Gamble</td>
+                            <td>PG</td>
+                            <td>5.0</td>
+                            <td>648.55</td>
+                            <td>20%</td>
+                            <td>50/2</td>
+                            <td>25/1.5</td>
+                            <td>03/10/21</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Bank of America</td>
+                            <td>BAC</td>
+                            <td>10.5</td>
+                            <td>395.01</td>
+                            <td>35%</td>
+                            <td>11/3</td>
+                            <td>35/2</td>
+                            <td>02/12/20</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>PIMCO High Income Fund</td>
+                            <td>PHK</td>
+                            <td>50</td>
+                            <td>324.0</td>
+                            <td>11%</td>
+                            <td>22/5</td>
+                            <td>11/6</td>
+                            <td>04/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Textron</td>
+                            <td>TXT</td>
+                            <td>8.0</td>
+                            <td>435.44</td>
+                            <td>60%</td>
+                            <td>25/8</td>
+                            <td>8/3</td>
+                            <td>04/01/22</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Apple</td>
+                            <td>AAPL</td>
+                            <td>2.0</td>
+                            <td>247.16</td>
+                            <td>13%</td>
+                            <td>500/20</td>
+                            <td>250/10</td>
+                            <td>03/22/21</td>
+                        </tr>
+                         <tr>
+                            <td>9</td>
+                            <td>Tesla</td>
+                            <td>TSLA</td>
+                            <td>3.0</td>
+                            <td>2078.40</td>
+                            <td>20%</td>
+                            <td>600/30</td>
+                            <td>300/15</td>
+                            <td>01/30/21</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Amazon</td>
+                            <td>AMZN</td>
+                            <td>1.0</td>
+                            <td>3119.59</td>
+                            <td>10%</td>
+                            <td>900/60</td>
+                            <td>45000/7</td>
+                            <td>12/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Proctor & Gamble</td>
+                            <td>PG</td>
+                            <td>5.0</td>
+                            <td>648.55</td>
+                            <td>20%</td>
+                            <td>50/2</td>
+                            <td>25/1.5</td>
+                            <td>03/10/21</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Bank of America</td>
+                            <td>BAC</td>
+                            <td>10.5</td>
+                            <td>395.01</td>
+                            <td>35%</td>
+                            <td>11/3</td>
+                            <td>35/2</td>
+                            <td>02/12/20</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>PIMCO High Income Fund</td>
+                            <td>PHK</td>
+                            <td>50</td>
+                            <td>324.0</td>
+                            <td>11%</td>
+                            <td>22/5</td>
+                            <td>11/6</td>
+                            <td>04/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Textron</td>
+                            <td>TXT</td>
+                            <td>8.0</td>
+                            <td>435.44</td>
+                            <td>60%</td>
+                            <td>25/8</td>
+                            <td>8/3</td>
+                            <td>04/01/22</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Apple</td>
+                            <td>AAPL</td>
+                            <td>2.0</td>
+                            <td>247.16</td>
+                            <td>13%</td>
+                            <td>500/20</td>
+                            <td>250/10</td>
+                            <td>03/22/21</td>
+                        </tr>
+                         <tr>
+                             <td>16</td>
+                            <td>Tesla</td>
+                            <td>TSLA</td>
+                            <td>3.0</td>
+                            <td>2078.40</td>
+                            <td>20%</td>
+                            <td>600/30</td>
+                            <td>300/15</td>
+                            <td>01/30/21</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Amazon</td>
+                            <td>AMZN</td>
+                            <td>1.0</td>
+                            <td>3119.59</td>
+                            <td>10%</td>
+                            <td>900/60</td>
+                            <td>45000/7</td>
+                            <td>12/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Proctor & Gamble</td>
+                            <td>PG</td>
+                            <td>5.0</td>
+                            <td>648.55</td>
+                            <td>20%</td>
+                            <td>50/2</td>
+                            <td>25/1.5</td>
+                            <td>03/10/21</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Bank of America</td>
+                            <td>BAC</td>
+                            <td>10.5</td>
+                            <td>395.01</td>
+                            <td>35%</td>
+                            <td>11/3</td>
+                            <td>35/2</td>
+                            <td>02/12/20</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>PIMCO High Income Fund</td>
+                            <td>PHK</td>
+                            <td>50</td>
+                            <td>324.0</td>
+                            <td>11%</td>
+                            <td>22/5</td>
+                            <td>11/6</td>
+                            <td>04/25/20</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>Textron</td>
+                            <td>TXT</td>
+                            <td>8.0</td>
+                            <td>435.44</td>
+                            <td>60%</td>
+                            <td>25/8</td>
+                            <td>8/3</td>
+                            <td>04/01/22</td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        <div class="device-showcase">
+            <div class="devices" style = "opacity:0.55;">
+                <div class="ipad-wrap wp1 left"></div>
+                <div class="iphone-wrap wp2" style="left:1200px;"></div>
+            </div>
+        </div>
+        <div class="responsive-feature-img"><img src="img/bullAndBear.png" alt="responsive devices"></div>
+        <script src= "js/TableExportCSV.js"></script>
+        <script>
+        const dataTable = document.getElementById("dataTable");
+        const btnExportToCsv = document.getElementById("btnExportToCsv");
+
+        btnExportToCsv.addEventListener("click", () => {
+            const exporter = new TableCSVExporter(dataTable);
+            const csvOutput = exporter.convertToCSV();
+            const csvBlob = new Blob([csvOutput], { type: "text/csv" });
+            const blobUrl = URL.createObjectURL(csvBlob);
+            const anchorElement = document.createElement("a");
+
+            anchorElement.href = blobUrl;
+            anchorElement.download = "table-export.csv";
+            anchorElement.click();
+
+            setTimeout(() => {
+                URL.revokeObjectURL(blobUrl);
+            }, 500);
+        });
+    </script>
+    </section>
+   <section class="to-top">
+        <div class="container">
+            <div class="row">
+                <div class="to-top-wrap">
+                    <a href="#top" class="top"><i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="footer-links">
+                        <ul class="footer-group">
+                            <li><a href="Privacy.html">Privacy</a></li>
+                            <li><a href="Licenses.html">Licenses</a></li>
+                            <li><a href="#">Source Code</a></li>
+                            <li><a href="mailto:investorgator@case.edu">Contact</a></li>
+                        </ul>
+                        <p>Copyright © 2021 <a href="#">Investorgator</a><br>
+                        Copyright © 2020 <a href="#">Codrops</a><br></p>
+                    </div>
+                </div>
+                <div class="social-share">
+                    <p>Share Investorgator with your friends</p>
+                    <a href="https://twitter.com/Investorgator1" class="twitter-share"><i class="fa fa-twitter"></i></a> <a href="https://www.facebook.com/Investorgator-100130655501228" class="facebook-share"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var jq3$ = $.noConflict(true);
+    </script>
+    <script src="js/dropdownScript.js"></script>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="bower_components/retina.js/dist/retina.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="bower_components/classie/classie.js"></script>
+    <script src="bower_components/jquery-waypoints/lib/jquery.waypoints.min.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+</body>
+</html>
